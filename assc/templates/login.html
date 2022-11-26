@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+    <title> Login </title>
+{% endblock %}
+{%block content%}
+    <div class ="container">
+        <div style ="width: 30vw;">
+                <form action ="/login"  method ="POST" class="p-3 bg-dark text-white rounded">
+                    {% csrf_token %}
+                    <input type ="text" placeholder="Name" name = 'name'  class = "form-control " style = "margin-bottom: 3px;"/>
+                  
+                    <input type ="text" placeholder="Password" name = 'password' class = "form-control " style = "margin-bottom: 3px;"/>
+                    <input type="submit" value ='Login' class = "form-control"style = "margin-bottom: 3px;" />
+
+                </form>
+                <div >
+                    <a href="registration" class = "form-control "  style = 'align-items: center; text-decoration: none; text-align: center;margin-top: 5px;' >
+                        Registration
+                    </a>
+                </div>
+        </div>
+    </div>
+        
+        
+{% endblock %}  
