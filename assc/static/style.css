@@ -5,11 +5,14 @@
     /* Here's the trick */
     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)) , var(--image-url) center center;
     background-size: cover;
-    height : 65vw;
+    height : 100%;
+       
     /* Here's the same styles we applied to our content-div earlier */
     color: white;
-    min-height: 50vh;
+    min-height: 90vh;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    
   }

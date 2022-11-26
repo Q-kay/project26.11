@@ -7,12 +7,12 @@
                 
         </div>
         {% for post in  posts %}
-            <div style = "width: 25vw;">
-                <a  style  ="text-decoration: none;" href ='post/{{post.id}}'>
-                    <div class="border border-3 border-info  m-2 p-3">
+            <div style = "width: 25vw; margin: 4px; " class="shadow-lg p-3">
+                <a  style  ="text-decoration: none; " href ='post/{{post.id}}'>
+                    <div class="shadow-lg p-3 mb-2 bg-secondary border border-dark text-dark rounded m -2">
+                         <h3 class = "fs-1">{{post.author}}</h3>
                         <h3 class = "fs-1">{{post.title}}</h3>
-                        <img style ="width: 20vw;" src="/static/images/{{post.image}}" alt="" />
-                        <p class  = "fs-3">{{post.text}}</p>
+                        
                     </div>
                 </a>
             </div>

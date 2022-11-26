@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}
+        <title> New post  </title>
+    {% endblock %}
+    {%block content%}
+       
+        {% if   user.is_authenticated %}
+                <form class="p-3 bg-dark text-white rounded" 
+                action="newpost" 
+                method="POST" 
+                enctype="multipart/form-data"  style="height: 85vh; width: 900px ;">
+                    {% csrf_token %}
+                    <input type = "text" class="form-control" id="exampleFormControlInput1" value="" name ='title' style =" margin-bottom: 10px;" placeholder="Title"/>
+                    <textarea class="form-control" id="exampleFormControlInput3"value="" name ='text' style ="height:52vw; margin-bottom: 12px;" placeholder="Enter text here"></textarea>
+                    <input type="submit" value ="Save"  class="btn btn-outline-light" style ="float: right"/>
+                </form>
+        {% else %}     
+                <div class="p-3 bg-dark text-white rounded" >
+                    <h3>Login please.</h3 >
+                </div>
+        
+        {% endif %}
+      
+        
+    {% endblock %}  

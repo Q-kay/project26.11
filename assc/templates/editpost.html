@@ -5,7 +5,7 @@
     {% endblock %}
     {%block content%}
        
-            
+        {% if   user.is_authenticated %}
                 <form class="p-3 bg-dark text-white rounded" 
                 action="/saveeditpost/{{post.id}}" 
                 method="POST" 
@@ -15,7 +15,12 @@
                     <textarea class="form-control" id="exampleFormControlInput3"value="{{post.text}}" name ='text' style ="height:20vw; margin-bottom: 12px;"></textarea>
                     <input type="submit" value ="Save"  class="btn btn-outline-light" style =" align: center;"/>
                 </form>
-                
+        {% else %}     
+                <div class="p-3 bg-dark text-white rounded" >
+                    <h3>Login please.</h3 >
+                </div>
+        
+        {% endif %}
       
         
     {% endblock %}  

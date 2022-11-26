@@ -14,8 +14,14 @@
             <div class="p-3 bg-dark text-white"  >
                
                 <div align = 'right'>
-                    <a class="btn btn-outline-light" href =' '>Posts</a>
-                    <a class="btn btn-outline-light" href ='login'>Login</a>
+                    <a class="btn btn-outline-light" href ='/posts'>Posts</a>
+                    {% if   user.is_authenticated %}
+                    <a href ='/newpost' class="btn btn-outline-light"> New Post </a>
+                    <a href ='/log_out' class="btn btn-outline-success"> {{user}} </a>
+                  
+                    {% else %}
+                    <a class="btn btn-outline-light" href ='/login'>Login</a>
+                    {% endif %}
                 </div> 
             </div> 
       
