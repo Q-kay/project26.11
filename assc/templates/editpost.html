@@ -12,7 +12,7 @@
                 enctype="multipart/form-data"  style = "width: 50vw ;">
                     {% csrf_token %}
                     <input type = "text" class="form-control" id="exampleFormControlInput1" value="{{post.title}}" name ='title' style =" margin-bottom: 2px;" />
-                    <textarea class="form-control" id="exampleFormControlInput3"value="{{post.text}}" name ='text' style ="height:20vw; margin-bottom: 12px;"></textarea>
+                    <textarea class="form-control" id="exampleFormControlInput3" placeholder="{{post.text}}" name ='text' style ="height:20vw; margin-bottom: 12px;"></textarea>
                     <input type="submit" value ="Save"  class="btn btn-outline-light" style =" align: center;"/>
                 </form>
         {% else %}     

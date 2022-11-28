@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}
+        <title> Profile </title>
+    {% endblock %}
+    {%block content%}
+       
+        {% if   user.is_authenticated %}
+            <div class="shadow-lg p-3 " style="height: 86vh; width: 900px ;" >
+                    <div class="shadow-lg p-3  bg-secondary border border-dark text-dark rounded "
+                    style="height: 75vh; width:850px ;">
+                    <h3 class='fs-1 bg-dark text-white' id="exampleFormControlInput1"  style =" margin-bottom: 2px;" >Profile of  {{request.user}}</h3>
+                    <h3 class="fs-3" id="exampleFormControlInput1"  style =" margin-bottom: 2px;width:45vw; float:right;" >Your Avatar</h3>
+                    <h3 class="fs-3" id="exampleFormControlInput1"  style =" margin-bottom: 2px;" >About</h3>
+                    <img src ='{% static path %}' alt ='' style="width:45vw; float:right;"/>
+                    <textarea class="form-control" id="exampleFormControlInput3"value="info(not working)" name ='text' style ="height:43vw; margin-bottom: 12px;width: 35vw;" placeholder="info(not working)"></textarea>
+                    </div>
+                
+                <form class="p-3 bg-dark text-white rounded" 
+                action="saveavatar" 
+                method="POST" 
+                enctype="multipart/form-data"  style = "width: 850px;  float: left; height: 60px;">
+
+                    {% csrf_token %}
+                    <input type="file" name = 'avatar' class="form-control" style ="width:25vw ;  float: left;" />
+                    <input type="submit" value ="Download new avatar"  class="btn btn-outline-light" style ="  float: left;"/>
+                    <a href="log_out" class="btn btn-outline-danger" style ="  float: right;"> Logout </a>
+                </form>
+            </div>
+        {% else %}     
+                <div class="p-3 bg-dark text-white rounded" >
+                    <h3>Login please.</h3 >
+                </div>
+        
+        {% endif %}
+      
+        
+    {% endblock %}  

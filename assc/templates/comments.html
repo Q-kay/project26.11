@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+    {% block title %}
+        <title> Comments</title>
+    {% endblock %}
+    {%block content%}
+                
+        </div>
+        {% for comment in  comments  %}
+            <div style = "width: 25vw; margin: 4px; " class="shadow-lg p-3">
+               
+                    <div class="shadow-lg p-3 mb-2 bg-secondary border border-dark text-dark rounded m -2">
+                         <h3 class = "fs-1">{{comment.author}}</h3>
+                        <h3 class = "fs-1">{{comment.text}}</h3>
+                        
+                    </div>
+               
+            </div>
+        {% endfor %}
+        
+                
+        <div class="p-3 bg-dark text-white" style="width:85vw;" >
+            <form action="/newcomment/{{index}}" method="POST" enctype="multipart/form-data" style="width:50vw;float: left ">
+                {% csrf_token %}
+                
+                <input type ="text" placeholder ="Enter your comment" name ="text" style ="width:36vw;"/>
+                <input type ="submit" value ="Post Comment" class="btn btn-outline-light"/>
+            </form>
+            <a  href ='/xmldownload/{{index}}' class="btn btn-outline-light"  style="width:30vw;float:right;">
+                
+                Download comments in xml
+            </a>
+         </div>
+        
+    {% endblock %}    
+ 

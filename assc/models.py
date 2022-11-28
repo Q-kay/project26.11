@@ -8,3 +8,11 @@ class Posts(models.Model):
 
     def __str__(self):
         return self.title
+
+class Comments(models.Model):
+    post_id = models.IntegerField()
+    text = models.TextField()
+    author = models.CharField(max_length=200, default='')
+
+    def __str__(self):
+        return self.title        
